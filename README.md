@@ -1,40 +1,45 @@
 # PIXELFPS
 
-PIXELFPS is the platform repo for the PixelFPS competitive FPS stack.
-It covers the web product surfaces around the game: homepage, auth, stats, rankings, lobby, and matchmaking.
+**Competitive FPS platform around the game: homepage, auth, stats, rankings, lobby, and matchmaking.**
 
-## Current Scope
+PIXELFPS is the web product and player platform for the broader PixelFPS stack.
+It handles everything around the game client itself: player identity, progression surfaces, rankings, lobby coordination, and the browser paths that sit in front of match execution.
 
-- marketing and entry surface
-- account and login flow
-- player stats and rankings
-- lobby state and matchmaking entry
-- browser QA runbooks for core routes
-
-## Stack
-
-- Google OAuth
-- Supabase
-- external game engine endpoint via `GAME_ENGINE_URL`
-- GitHub Actions deploy path
-
-See `.env.example` for required configuration.
-
-## Features
+## Scope
 
 - homepage and entry surface
-- account and login flow
-- player stats and rankings
-- lobby coordination
+- Google login and player identity
+- stats and rankings
+- lobby creation and pre-match coordination
 - matchmaking entry
-- browser QA baseline for core routes
+- browser QA baselines for the core user paths
+
+## Tech stack
+
+| Layer | Tech |
+|---|---|
+| Auth | Google OAuth + Supabase Auth |
+| Database | Supabase |
+| Game handoff | [pixelfps.com/game](https://game.pixelfps.com) |
+| Delivery | GitHub Pages + GitHub Actions |
+
+## Environment
+
+Copy `.env.example` to `.env` and provide:
+
+```bash
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+GAME_ENGINE_URL=
+```
 
 ## QA
 
-Browser smoke testing lives in [QA_BROWSER.md](./QA_BROWSER.md).
-Use Chrome DevTools MCP for route, console, and network verification.
+Use the browser smoke pack in [QA_BROWSER.md](./QA_BROWSER.md) for homepage, auth, stats, rankings, lobby, and matchmaking verification.
 
 ## Current State
 
-This repo is currently lightweight and documentation-led.
-The main public value right now is the platform scope, environment contract, and QA baseline for future implementation passes.
+This repo is currently infrastructure-led.
+The live value today is the platform contract, environment shape, and QA path for the next implementation pass.
