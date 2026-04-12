@@ -1,44 +1,40 @@
-# PIXELFPS Platform
+# PIXELFPS
 
-**Full-stack competitive FPS platform — auth, lobbies, matchmaking, rankings, and real-time analytics.**
+PIXELFPS is the platform repo for the PixelFPS competitive FPS stack.
+It covers the web product surfaces around the game: homepage, auth, stats, rankings, lobby, and matchmaking.
 
-PIXELFPS Platform is the web infrastructure layer for [PixelFPS](https://pixelfps.com) — a browser-based competitive first-person shooter. This repo handles everything outside the game engine: player identity, session management, leaderboards, and lobby coordination.
+## Current Scope
+
+- marketing and entry surface
+- account and login flow
+- player stats and rankings
+- lobby state and matchmaking entry
+- browser QA runbooks for core routes
+
+## Stack
+
+- Google OAuth
+- Supabase
+- external game engine endpoint via `GAME_ENGINE_URL`
+- GitHub Actions deploy path
+
+See `.env.example` for required configuration.
 
 ## Features
 
-- **Auth** — Google OAuth via Supabase, session handling, player profiles
-- **Lobby system** — create, join, and manage game lobbies pre-match
-- **Matchmaking** — skill-based match pairing
-- **Rankings** — global and regional leaderboards with stat tracking
-- **Analytics** — real-time match data, kill/death ratios, win rates
-- **Homepage** — public-facing site with player stats and game info
+- homepage and entry surface
+- account and login flow
+- player stats and rankings
+- lobby coordination
+- matchmaking entry
+- browser QA baseline for core routes
 
-## Tech stack
+## QA
 
-| Layer | Tech |
-|---|---|
-| Auth | Google OAuth + Supabase Auth |
-| Database | Supabase (Postgres) |
-| Game engine | [pixelfps.com/game](https://game.pixelfps.com) |
-| Deployment | GitHub Actions |
+Browser smoke testing lives in [QA_BROWSER.md](./QA_BROWSER.md).
+Use Chrome DevTools MCP for route, console, and network verification.
 
-## Setup
+## Current State
 
-```bash
-cp .env.example .env
-# Fill in Supabase URL, anon key, Google OAuth credentials
-```
-
-Required environment variables — see `.env.example` for full list:
-
-```
-GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET
-SUPABASE_URL
-SUPABASE_ANON_KEY
-GAME_ENGINE_URL
-```
-
-## License
-
-MIT
+This repo is currently lightweight and documentation-led.
+The main public value right now is the platform scope, environment contract, and QA baseline for future implementation passes.
