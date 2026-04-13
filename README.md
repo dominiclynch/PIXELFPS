@@ -1,18 +1,18 @@
 # PIXELFPS
 
-**Competitive FPS platform around the game: homepage, auth, stats, rankings, lobby, and matchmaking.**
+**Competitive FPS platform — homepage, auth, stats, rankings, lobby, and matchmaking.**
 
 PIXELFPS is the web product and player platform for the broader PixelFPS stack.
 It handles everything around the game client itself: player identity, progression surfaces, rankings, lobby coordination, and the browser paths that sit in front of match execution.
 
 ## Scope
 
-- homepage and entry surface
+- Homepage and entry surface
 - Google login and player identity
-- stats and rankings
-- lobby creation and pre-match coordination
-- matchmaking entry
-- browser QA baselines for the core user paths
+- Stats and rankings
+- Lobby creation and pre-match coordination
+- Matchmaking entry
+- Browser QA baselines for the core user paths
 
 ## Tech stack
 
@@ -43,3 +43,9 @@ Use the browser smoke pack in [QA_BROWSER.md](./QA_BROWSER.md) for homepage, aut
 
 This repo is currently infrastructure-led.
 The live value today is the platform contract, environment shape, and QA path for the next implementation pass.
+
+## License
+
+[FSL-1.1-MIT](./LICENSE) — Functional Source License.
+
+Free to use for personal projects, indie development, hobbyist use, and non-commercial purposes. Converts to MIT on 28 April 2028. Commercial use that competes with PixelFPS is not permitted.
